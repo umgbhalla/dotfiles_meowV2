@@ -1,15 +1,14 @@
 #!/bin/bash
 
 rofi -no-lazy-grab \
--disable-history \
 -modi "drun" -show drun \
 -columns 1 \
 -lines 8 \
 -line-padding 10 \
 -padding 20 \
 -width 27 \
--location 0 \
--font "CaskaydiaCove Nerd Font 8" \
--theme ~/.config/rofi/theme.rasi
+-font "JetBrains Mono 9" \
+-theme ~/.config/rofi/Iceburg.rasi \
+-terminal alacritty
+#  
 
-# -xoffset 5 -yoffset +40 \

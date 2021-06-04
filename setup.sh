@@ -1,6 +1,6 @@
 #!/bin/bash
 
-title="kizu's rice setup script"
+title="umang's rice setup script"
 
 downloadDependencies() {
     if grep "Arch\|Artix\|EndeavourOS\|Manjaro" /etc/*-release; then
@@ -14,10 +14,10 @@ downloadDependencies() {
 
         if [[ -e /usr/bin/paru ]]; then
             echo -e "[*] paru detected. Installing dependencies..."
-            paru -S bspwm sxhkd rofi polybar neovim-nightly-bin alacritty dunst picom brightnessctl playerctl dunst hsetroot maim viewnior jq xclip bsp-layout
+            paru -S bspwm sxhkd rofi polybar neovim-nightly-bin alacritty dunst picom-ibhagwan-git brightnessctl playerctl dunst hsetroot maim viewnior jq xclip bsp-layout
         elif [[ -e /usr/bin/yay ]]; then
             echo -e "[*] yay detected. Installing dependencies..."
-            yay -S bspwm sxhkd rofi polybar neovim-nightly-bin alacritty dunst picom brightnessctl playerctl dunst hsetroot maim viewnior jq xclip bsp-layout
+            yay -S bspwm sxhkd rofi polybar neovim-nightly-bin alacritty dunst picom-ibhagwan-git brightnessctl playerctl dunst hsetroot maim viewnior jq xclip bsp-layout
         else
             # Line from https://github.com/Axarva/dotfiles-2.0/blob/9f0a71d7b23e1213383885f2ec641da48eb01681/install-on-arch.sh#L67
             read -r -p "Would you like to install yay? [Y/n]: " yay
@@ -143,7 +143,7 @@ copyFiles() {
 
     sleep 1
     echo "[*] Copied files successfully."
-    sleep 0.7
+    sleep 1
 }
 
 finalizeChanges() {
@@ -152,7 +152,7 @@ finalizeChanges() {
     fc-cache -v
 
     clear
-    sleep 1.3
+    sleep 1
 
     clear
     echo "[*] Finalizing changes..."
@@ -181,7 +181,7 @@ success() {
 }
 
 echo "[*] Starting setup script..."
-sleep 0.5
+sleep 1
 
 # Prompt user the welcome dialog
 welcome || fuckUser

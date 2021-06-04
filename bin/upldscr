@@ -6,8 +6,8 @@ _notify() {
 }
 
 # Get your own in vch.gg/discord or https://discord.gg/fEBzUtUbbx
-key=""
-url=""
+key="0c465fc50cf6a615b8e1eeca4bc5d758"
+url="$json:files[0].url$"
 
 if [[ $(file --mime-type -b $1) != "image/png" ]]; then
 	rm $1
