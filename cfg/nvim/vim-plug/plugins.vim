@@ -19,15 +19,20 @@ endif
 call plug#begin('~/.config/nvim/autoload/plugged')
 "
 " Better Syntax Support
-Plug 'sheerun/vim-polyglot'
+" Plug 'sheerun/vim-polyglot'
+"
 " File Explorer
 " Plug 'scrooloose/NERDTree'
+"
 " Auto pairs for '(' '[' '{'
 Plug 'jiangmiao/auto-pairs'
+  
 " Theme 
 Plug 'arcticicestudio/nord-vim'
-Plug 'gruvbox-community/gruvbox'
+" Plug 'gruvbox-community/gruvbox'
 Plug 'flazz/vim-colorschemes'
+Plug 'morhetz/gruvbox'
+Plug 'sainnhe/gruvbox-material'
 " Airline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -49,6 +54,8 @@ Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'voldikss/vim-floaterm'
+Plug 'f-person/git-blame.nvim'
+Plug 'lewis6991/gitsigns.nvim'
 " Plug 'zxqfl/tabnine-vim'
 Plug 'tpope/vim-repeat'
 " Plug 'sjl/gundo.vim'
