@@ -34,9 +34,9 @@ configuration {
 }
 
 * {
-    bg: #13141D;
-    fg: #CFD1DD;
-    ac: #84A0C6;
+    bg: #100c23;
+    fg: #aaaaee;
+    ac: #3313b4;
     red: #E27878;
     green: #A3BE8C;
 
@@ -46,9 +46,9 @@ configuration {
 window {
     border: 						3px;
     border-color: 					@bg;
-    border-radius: 					0px;
+    border-radius: 					8px;
     padding: 						30;
-    width: 							25%;
+    width: 							50%;
 }
 
 prompt {

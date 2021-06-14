@@ -3,10 +3,11 @@
 # ##############################################################################
 
 
-# terminal emulator
+# terminal alacritty
 super + Return
     alacritty
 
+# terminal kitty
 super + shift + Return
     kitty
 
@@ -14,24 +15,31 @@ super + shift + Return
 super + e
     google-chrome-stable
 
+# firefox
 super + w
     firefox
 
+# thunar
 super + n
     thunar
 
+# mini google
 alt + Return
     surf google.com
 
+# dmenu_run
 super + d
     dmenu_run
 
+# neovide
 super + a
     neovide
 
+# bpytop
 super + b
 	alacritty -e bpytop
 
+# ranger
 super + r
 	alacritty -e ranger
 
@@ -40,29 +48,43 @@ super + r
 super + space
     sh $HOME/.local/bin/appmnu
 
+# rofimoji
 alt + e
     rofimoji
 
+# man search
 alt + m
-	~/.scripts/searchman
+    sh $HOME/.local/bin/searchman
 
+# random manpage
 alt + r
-	~/.scripts/randman
+    sh $HOME/.local/bin/randman
 
+# clipmenu
 alt + v
     CM_LAUNCHER=rofi clipmenu
 
-alt + p
-	~/.scripts/confi
+# keybindhelper
+alt + h
+    $HOME/.config/bspwm/scripts/keybindings_rofi.sh
 
-alt + n
-	~/.scripts/confi
+# config rofi menu ; open in nvim
+alt + p
+    sh $HOME/.local/bin/confi
+
 
 # show open window
 super + period
-    rofi -modi drun -show window -line-padding 4 \
-                -columns 2 -padding 50 -hide-scrollbar -terminal xfce4-terminal \
-                -show-icons -drun-icon-theme "Arc-X-D" -font "Droid Sans Regular 10"
+	rofi -no-lazy-grab \
+	-modi "drun" -show window \
+	-columns 1 \
+	-lines 8 \
+	-line-padding 10 \
+	-padding 20 \
+	-width 27 \
+	-font "JetBrains Mono 9" \
+	-theme ~/.config/rofi/Iceburg.rasi \
+	-terminal alacritty
 
 # show ssh sesssions
 super + shift + d
@@ -83,9 +105,6 @@ super + Escape
 # #                                 BSPWM HOTKEYS                              #
 # ##############################################################################
 
-# Toggle eww dashboard
-super + {_,shift + }p
-    sh $HOME/.local/bin/dshbrd {open,close}
 
 #
 # bspwm hotkeys
@@ -137,7 +156,7 @@ super + {_,shift + }{h,j,k,l}
 # 	bspc node -f @{parent,brother,first,second}
 
 super + comma
-     bspc node -d '^10'
+     bspc node -d '^7'
 
 # focus the next/previous window in the current desktop
 super + {_,shift + }c
@@ -162,10 +181,12 @@ super + {o,i}
 	bspc wm -h on
 
 # focus or send to the given desktop
-super + {_,shift + }{1-9,0}
-	bspc {desktop -f,node -d} '^{1-9,10}'
+super + {_,shift + }{1-8,0}
+	bspc {desktop -f,node -d} '^{1-8,7}'
 
 
+super + {_,shift + }{9}
+	bspc {desktop -f,node -d} '^{6}'
 
 #
 # preselect
@@ -193,15 +214,15 @@ super + ctrl + shift + space
 
 # expand a window by moving one of its side outward
 super + alt + {h,j,k,l}
-	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+	bspc node -z {left -10 0,bottom 0 10,top 0 -10,right 10 0}
 
 # contract a window by moving one of its side inward
 super + alt + shift + {h,j,k,l}
-	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+	bspc node -z {right -10 0,top 0 10,bottom 0 -10,left 10 0}
 
 # move a floating window
 super + {Left,Down,Up,Right}
-	bspc node -v {-20 0,0 20,0 -20,20 0}
+	bspc node -v {-10 0,0 10,0 -10,10 0}
 #
 # Special hotkeys
 #

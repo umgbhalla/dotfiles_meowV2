@@ -6,6 +6,7 @@
  * Twitter : @adi1090x
  * 
  * MODIFIED BY @TheRealKizu 
+ * MODIFIED AGAIN BY @umgbhalla
  */
 
 configuration {
@@ -19,16 +20,17 @@ configuration {
 }
 
 * {
-    bg:                             #1D2021;
-    fg:                             #FBF1C7;
-    ac:                             #7daea3;
+    bg:                             #100c23;
+    fg:                             #aaaaee;
+    ac:                             #2212b2;
 
     background-color:               @bg;
     text-color:                     @fg;
 }
 
 window {    
-	width:							40%;
+	width:							50%;
+    border-radius: 					8px;
 }
 
 prompt {
@@ -65,7 +67,7 @@ inputbar {
 }
 
 listview {
-    background-color:               @al;
+    background-color:               @bg;
     padding:                        10px;
     columns:                        4;
     lines:                          3;
@@ -86,15 +88,15 @@ mainbox {
 }
 
 element {
-    background-color:               @al;
+    background-color:               @bg;
     text-color:                     @fg;
     orientation:                    vertical;
-    border-radius:                  0%;
-    padding:                        2% 0% 2% 0%;
+    border-radius:                  6px;
+    padding:                        2% 2% 2% 2%;
 }
 
 element-icon {
-    size:                           49px;
+    size:                           40px;
     border:                         0px;
 }
 
@@ -107,5 +109,5 @@ element-text {
 
 element selected {
     background-color:               @ac;
-    text-color:                     @bg;
+    text-color:                     #000000;
 }

@@ -50,37 +50,38 @@
     nnoremap <S-TAB> :bprevious<CR>
 
 " Alternate way to save
-    nnoremap <C-s> :w<CR> :SClose <CR>
+    nnoremap <C-s> :w<CR>
 " Alternate way to quit
     nnoremap <C-Q> :wq!<CR>
 " Use control-c instead of escape
     "nnoremap <C-c> <Esc>
 
 " <TAB>: completion.
-    inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+	inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
 
 " Better tabbing
-    vnoremap < <gv
-    vnoremap > >gv
+	vnoremap < <gv
+	vnoremap > >gv
 
 " Better window navigation
-    nnoremap <C-h> <C-w>h
-    nnoremap <C-j> <C-w>j
-    nnoremap <C-k> <C-w>k
-    nnoremap <C-l> <C-w>l
+	nnoremap <C-h> <C-w>h
+	nnoremap <C-j> <C-w>j
+	nnoremap <C-k> <C-w>k
+	nnoremap <C-l> <C-w>l
 
-    nnoremap <Leader>o o<Esc>^Da
-    nnoremap <Leader>O O<Esc>^Da
+	nnoremap <Leader>o o<Esc>^Da
+	nnoremap <Leader>O O<Esc>^Da
 
-    nnoremap <Leader>t <Esc>:FloatermToggle<CR>
-    nnoremap <Leader>r <Esc>:RnvimrToggle<CR>
-    nnoremap <Leader>h <C-W>s
-    nnoremap <Leader>v <C-W>v
-    nnoremap <Leader>; <C-W>s<CR>:terminal <CR>i
+	nnoremap <Leader>t <Esc>:FloatermToggle<CR>
+	nnoremap <Leader>r <Esc>:RnvimrToggle<CR>
+	nnoremap <Leader>h <C-W>s
+	nnoremap <Leader>v <C-W>v
+	nnoremap <Leader>; <C-W>s<CR>:terminal <CR>i
 	" Open terminal
 	nnoremap <Leader>' :vsplit term://zsh<CR>
 	nnoremap <Leader>; :split term://zsh<CR>
 
     nnoremap <Leader>p <Esc>:GundoToggle<CR>
 
+	nnoremap <Leader>m <Esc>:GonvimMarkdown <CR>

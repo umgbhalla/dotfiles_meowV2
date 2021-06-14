@@ -1,5 +1,5 @@
 [global]
-    font = JetBrains Mono 9 
+    font = Hack Bold 12
 
     # Allow a small subset of html markup:
     # <b>bold</b>
@@ -58,12 +58,11 @@
     # right side of the screen.  Y is measured from the top and down respectevly.
     # The width can be negative. In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "250x200-5+40"
+    geometry = "300x250-15+50"
 
     # Frame
-    frame_width = 2
-    frame_color = "#fe8019"
-
+    frame_width = 0
+    frame_color = "#e96861"
 
     # The transparency of the window. range: [0; 100]
     # This option will only work if a compositing windowmanager is present (e.g. xcompmgr, compiz, etc..)
@@ -131,8 +130,7 @@
     max_icon_size = 40
 
     # Paths to default icons.
-    # icon_path = /home/kizu/.icons/Horizon/16x16/status/:/home/kizu/.icons/Horizon/16x16/devices/:/home/kizu/.icons/Horizon/16x16/apps/
-
+    icon_path = /home/umang/.local/share/icons/Gruvbox-Material-Dark/16x16/status:/home/umang/.local/share/icons/Gruvbox-Material-Dark/16x16/apps:/home/umang/.local/share/icons/Gruvbox-Material-Dark/16x16/devices/:
 [shortcuts]
     close = ctrl+space
     close_all = ctrl+shift+space
@@ -140,16 +138,16 @@
     context = ctrl+shift+period
 
 [urgency_low]
-    background = "#1d2021"
+    background = "#170637"
     foreground = "#fbf1c7"
     timeout = 3
 
 [urgency_normal]
-    background = "#1d2021"
+    background = "#170637"
     foreground = "#fbf1c7"
     timeout = 3
 
 [urgency_critical]
-    background = "#1d2021"
+    background = "#170637"
     foreground = "#fbf1c7"
     timeout = 9

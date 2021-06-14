@@ -1,18 +1,21 @@
 #! /bin/sh
 
+#       ██
+#      ░██              ██████
+#      ░██       ██████░██░░░██ ███     ██ ██████████  ██████  █████
+#      ░██████  ██░░░░ ░██  ░██░░██  █ ░██░░██░░██░░██░░██░░█ ██░░░██
+#      ░██░░░██░░█████ ░██████  ░██ ███░██ ░██ ░██ ░██ ░██ ░ ░██  ░░
+#      ░██  ░██ ░░░░░██░██░░░   ░████░████ ░██ ░██ ░██ ░██   ░██   ██
+#      ░██████  ██████ ░██      ███░ ░░░██ ███ ░██ ░██░███   ░░█████
+#      ░░░░░   ░░░░░░  ░░      ░░░    ░░░ ░░░  ░░  ░░ ░░░     ░░░░░
+
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-# ##############################################################################
-# #                                AUTOSTART APPS                              #
-# ##############################################################################
 
-setxkbmap -option caps:swapescape &
 # eww daemon &
-
 # Set display from arandr saved script
 # sh ~/.screenlayout/monitor.sh &
 # Bar
-
 sh $HOME/.config/polybar/launch.sh
 # Notifications
 killall dunst
@@ -20,63 +23,66 @@ dunst --config $HOME/.config/dunst/dunstrc &
 # Polkit
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 # Wallpaper
-nitrogen --restore &
-# feh --bg-fill  ~/wallpaper.png
+# nitrogen --restore &
+bash ~/.fehbg &
 # Dex
 dex -a -s /etc/xdg/autostart/:~/.config/autostart/  
 # Picom
 picom --config $HOME/.config/picom/picom.conf &
-
 # Network Applet
 nm-applet --indicator &
-
+# Clipboard manager
 clipmenud &
 
-# Cursor
+# Cursor and keyb
+setxkbmap -option caps:swapescape &
 xsetroot -cursor_name left_ptr &
 xset r rate 230 30
-sudo light -S 30 &
-# ##############################################################################
-# #                            GENERAL CONFIGURATION                           #
-# ##############################################################################
+sudo light -S 25 &
 
-bspc monitor -d I II III IV V VI VII VIII IX X
+#                             GENERAL CONFIGURATION                           #
 
-bspc config border_width         2
-bspc config window_gap           4
+
+bspc monitor -d I II III IV V VI VII 
+
+bspc config border_width         5
+bspc config window_gap           0
 # bspc config top_padding          36
 
 # Border
-# bspc config focused_border_color        "#88c0d0"
-# bspc config normal_border_color         "#434c5e"
-bspc config focused_border_color        "#e96861" 
+# bspc config focused_border_color        "#e96861" 
+bspc config focused_border_color        "#230B52"
+# bspc config focused_border_color        "#ffffff" 
 # bspc config focused_border_color        "#504945"
-bspc config normal_border_color         "#504945"
+bspc config normal_border_color         "#1e0f2c"
 bspc config active_border_color         "#fb4934"
+# bspc config active_border_color         "#230B52"
+bspc config presel_feedback_color		"#4c566a"
 
 bspc config split_ratio          0.55
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 bspc config pointer_follows_focus true
 bspc config focus_follows_pointer true
+bspc config single_monocle        false
 bspc config pointer_action2 resize_corner
-# ##############################################################################
-# #                                 WINDOW RULES                               #
-# ##############################################################################
 
-bpsc rule -a vivaldi-stable desktop=^1
-bspc rule -a discord desktop=^2
-bspc rule -a Code desktop=^1
-# bspc rule -a Thunar desktop=^4
-bspc rule -a Spotify desktop=^5
+#                                  WINDOW RULES                               #
+
+
+
+
+bspc rule -a Code desktop='^1'
+bspc rule -a Spotify desktop='^7'
 bspc rule -a Gimp desktop='^8' state=floating follow=on
-bspc rule -a Google-chrome desktop='^2' state=pseudo_tiled
-bspc rule -a firefox desktop='^2' state=pseudo_tiled
-bspc rule -a Ferdi desktop='^9'
+bspc rule -a Google-chrome desktop='^2'
+bspc rule -a firefox desktop='^2' 
+bspc rule -a Ferdi desktop='^6'
 bspc rule -a mplayer2 state=floating
 # bspc rule -a Alacritty state=pseudo_tiled
 bspc rule -a galculator state=floating
 bspc rule -a kitty state=floating
+bspc rule -a Pavucontrol state=floating
 bspc rule -a Yad state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off

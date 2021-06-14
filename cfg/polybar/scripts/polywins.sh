@@ -3,22 +3,23 @@
 
 # SETTINGS {{{ ---
 
-active_text_color="#FBF1C7"
+active_text_color="#FF5485"
 active_bg=
-active_underline="#ECB3B2"
+active_underline=
 
-inactive_text_color="#32302F"
+inactive_text_color="#ECB3B2"
+
 inactive_bg=
 inactive_underline=
 
-separator=""
+separator=" "
 show="window_class" # options: window_title, window_class, window_classname
 forbidden_classes="Polybar Conky Gmrun"
-empty_desktop_message="Desktop"
+empty_desktop_message="cr0nus"
 
-char_limit=15
-max_windows=4
-char_case="lower" # normal, upper, lower
+char_limit=20
+max_windows=6
+char_case="normal" # normal, upper, lower
 add_spaces="true"
 resize_increment=16
 wm_border_width=1 # setting this might be required for accurate resize position
@@ -47,50 +48,50 @@ main() {
 
 # ON-CLICK FUNCTIONS {{{ ---
 
-raise_or_minimize() {
-	if [ "$(get_active_wid)" = "$1" ]; then
-		wmctrl -ir "$1" -b toggle,hidden
-	else
-		wmctrl -ia "$1"
-	fi
-}
+# raise_or_minimize() {
+# 	if [ "$(get_active_wid)" = "$1" ]; then
+# 		wmctrl -ir "$1" -b toggle,hidden
+# 	else
+# 		wmctrl -ia "$1"
+# 	fi
+# }
 
-close() {
-	wmctrl -ic "$1"
-}
+# close() {
+# 	wmctrl -ic "$1"
+# }
 
-slop_resize() {
-	wmctrl -ia "$1"
-	wmctrl -ir "$1" -e "$(slop -f 0,%x,%y,%w,%h)"
-}
+# slop_resize() {
+# 	wmctrl -ia "$1"
+# 	wmctrl -ir "$1" -e "$(slop -f 0,%x,%y,%w,%h)"
+# }
 
-increment_size() {
-	while IFS="[ .]" read -r wid ws wx wy ww wh _; do
-		test "$wid" != "$1" && continue
-		x=$(( wx - wm_border_width * 2 - resize_increment / 2 ))
-		y=$(( wy - wm_border_width * 2 - resize_increment / 2 ))
-		w=$(( ww + resize_increment ))
-		h=$(( wh + resize_increment ))
-	done <<-EOF
-	$(wmctrl -lG)
-	EOF
+# increment_size() {
+# 	while IFS="[ .]" read -r wid ws wx wy ww wh _; do
+# 		test "$wid" != "$1" && continue
+# 		x=$(( wx - wm_border_width * 2 - resize_increment / 2 ))
+# 		y=$(( wy - wm_border_width * 2 - resize_increment / 2 ))
+# 		w=$(( ww + resize_increment ))
+# 		h=$(( wh + resize_increment ))
+# 	done <<-EOF
+# 	$(wmctrl -lG)
+# 	EOF
 
-	wmctrl -ir "$1" -e "0,$x,$y,$w,$h"
-}
+# 	wmctrl -ir "$1" -e "0,$x,$y,$w,$h"
+# }
 
-decrement_size() {
-	while IFS="[ .]" read -r wid ws wx wy ww wh _; do
-		test "$wid" != "$1" && continue
-		x=$(( wx - wm_border_width * 2 + resize_increment / 2 ))
-		y=$(( wy - wm_border_width * 2 + resize_increment / 2 ))
-		w=$(( ww - resize_increment ))
-		h=$(( wh - resize_increment ))
-	done <<-EOF
-	$(wmctrl -lG)
-	EOF
+# decrement_size() {
+# 	while IFS="[ .]" read -r wid ws wx wy ww wh _; do
+# 		test "$wid" != "$1" && continue
+# 		x=$(( wx - wm_border_width * 2 + resize_increment / 2 ))
+# 		y=$(( wy - wm_border_width * 2 + resize_increment / 2 ))
+# 		w=$(( ww - resize_increment ))
+# 		h=$(( wh - resize_increment ))
+# 	done <<-EOF
+# 	$(wmctrl -lG)
+# 	EOF
 
-	wmctrl -ir "$1" -e "0,$x,$y,$w,$h"
-}
+# 	wmctrl -ir "$1" -e "0,$x,$y,$w,$h"
+# }
 
 # --- }}}
 
